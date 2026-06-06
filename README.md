@@ -117,4 +117,9 @@ commands over a Unix domain socket to seek and read the playback position.
 
 ## License
 
-MIT License
+tucue is released under the [MIT License](LICENSE).
+
+tucue requires [mpv](https://mpv.io/), which is licensed under
+GPL-2.0-or-later and LGPL-2.1-or-later. mpv runs as a separate process and
+is not distributed with tucue; you install it yourself (e.g. via Homebrew),
+so its copyleft terms do not apply to tucue's own source.
