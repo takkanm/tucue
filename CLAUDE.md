@@ -15,7 +15,7 @@ moments, and exporting them.
 - **Code comments**: English.
 - **README and other distributed docs**: English.
 - **Commit messages**: English.
-- **UI strings and conversation with the user**: Japanese.
+- **UI strings**: English.
 
 ---
 
