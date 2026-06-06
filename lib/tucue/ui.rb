@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module Tucue
-  # curses ベースの TUI。キー入力ループと画面描画を担当する。
-  # TODO: curses による描画と再生位置ポーリングを実装する。
+  # curses-based TUI handling the key-input loop and screen drawing.
+  # TODO: implement curses rendering and playback-position polling.
   class UI
     def initialize(player, marker)
       @player = player

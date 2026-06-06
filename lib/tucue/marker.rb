@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module Tucue
-  # マークの登録と CSV / JSON へのエクスポートを担う。
-  # TODO: 実際のエクスポート処理を実装する。
+  # Records marks and exports them to CSV / JSON.
+  # TODO: implement the actual export logic.
   class Marker
     Mark = Struct.new(:time, :label)
 
