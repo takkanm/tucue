@@ -1,5 +1,7 @@
 # tucue
 
+[![CI](https://github.com/takkanm/tucue/actions/workflows/ci.yml/badge.svg)](https://github.com/takkanm/tucue/actions/workflows/ci.yml)
+
 A Ruby TUI application for playing local audio files, marking specific
 moments, and exporting them. Handy for managing cue points in interview
 recordings and similar audio.
