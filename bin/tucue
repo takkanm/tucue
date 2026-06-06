@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative "../lib/tucue"
+
+file = ARGV[0]
+
+unless file
+  warn "usage: tucue FILE"
+  exit 1
+end
+
+unless File.exist?(file)
+  warn "tucue: file not found: #{file}"
+  exit 1
+end
+
+player = Tucue::Player.new(file)
+marker = Tucue::Marker.new
+Tucue::UI.new(player, marker).run
