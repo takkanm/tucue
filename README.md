@@ -58,6 +58,18 @@ bundle exec tucue interview.mp3
 
 This launches the TUI and starts playback.
 
+### Options
+
+| Option | Description |
+|---|---|
+| `-s`, `--start TIME` | Start playback at `TIME`. Accepts `SS`, `MM:SS`, or `HH:MM:SS` (e.g. `90`, `1:30`, `01:02:03`). |
+| `-v`, `--version` | Show the version. |
+| `-h`, `--help` | Show help. |
+
+```bash
+bundle exec tucue --start 01:02:03 interview.mp3
+```
+
 ## Key bindings
 
 | Key | Action |

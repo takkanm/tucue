@@ -66,6 +66,21 @@ class PlayerTest < Minitest::Test
     refute File.exist?(@socket)
   end
 
+  def test_start_at_begins_near_the_given_position
+    @player.stop
+
+    socket = File.join(@dir, "tucue2.sock")
+    player = Tucue::Player.new(@wav, socket_path: socket, start_at: 1.5, extra_args: ["--ao=null"])
+    player.start
+    player.pause
+    deadline = Time.now + 3
+    sleep 0.02 until player.time_pos || Time.now > deadline
+
+    assert_in_delta 1.5, player.time_pos, 0.3
+  ensure
+    player&.stop
+  end
+
   private
 
   def wait_until(timeout: 3)

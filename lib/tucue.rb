@@ -9,3 +9,4 @@ end
 require_relative "tucue/player"
 require_relative "tucue/marker"
 require_relative "tucue/ui"
+require_relative "tucue/cli"

@@ -120,6 +120,7 @@ tucue/
     ├── tucue.rb       # requires and Tucue::Error
     └── tucue/
         ├── version.rb
+        ├── cli.rb     # argument parsing / entry point
         ├── player.rb  # mpv control
         ├── ui.rb      # curses TUI
         └── marker.rb  # mark management / export
@@ -131,7 +132,13 @@ tucue/
 
 ```bash
 bundle exec tucue interview.mp3
+bundle exec tucue --start 01:02:03 interview.mp3
 ```
+
+CLI options (parsed in `lib/tucue/cli.rb`):
+- `-s`, `--start TIME` — start playback at `TIME` (`SS`, `MM:SS`, or
+  `HH:MM:SS`). Implemented via mpv's `--start=` and `Player#start_at`.
+- `-v`, `--version`; `-h`, `--help`.
 
 ---
 

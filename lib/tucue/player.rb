@@ -16,9 +16,10 @@ module Tucue
     # Max seconds to wait for the IPC socket to appear.
     SOCKET_TIMEOUT = 5
 
-    def initialize(file, socket_path: "/tmp/tucue.sock", extra_args: [])
+    def initialize(file, socket_path: "/tmp/tucue.sock", start_at: nil, extra_args: [])
       @file = file
       @socket_path = socket_path
+      @start_at = start_at
       @extra_args = extra_args
       @pid = nil
       @socket = nil
@@ -39,6 +40,7 @@ module Tucue
         "--no-video",
         "--no-terminal",
         "--input-ipc-server=#{@socket_path}",
+        *(@start_at ? ["--start=#{@start_at}"] : []),
         *@extra_args,
         @file
       )
