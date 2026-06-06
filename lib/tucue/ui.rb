@@ -88,11 +88,11 @@ module Tucue
       label = prompt("Label (optional): ")
       label = nil if label.empty?
       @marker.add(pos, label)
-      @status = "Marked #{format_time(pos)}#{label ? " - #{label}" : ""}"
+      @status = "Marked #{format_time(pos)}#{" - #{label}" if label}"
     end
 
     def export
-      path = "#{File.basename(@player.file, '.*')}.csv"
+      path = "#{File.basename(@player.file, ".*")}.csv"
       @marker.export_csv(path)
       @status = "Exported #{@marker.marks.size} mark(s) to #{path}"
     rescue NotImplementedError
@@ -166,7 +166,7 @@ module Tucue
     end
 
     def progress_bar(pos, dur)
-      return "-" * PROGRESS_WIDTH unless pos && dur && dur.positive?
+      return "-" * PROGRESS_WIDTH unless pos && dur&.positive?
 
       filled = [(pos.to_f / dur * PROGRESS_WIDTH).round, PROGRESS_WIDTH].min
       ("#" * filled) + ("-" * (PROGRESS_WIDTH - filled))

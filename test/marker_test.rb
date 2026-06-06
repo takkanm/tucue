@@ -65,8 +65,8 @@ class MarkerTest < Minitest::Test
 
       data = JSON.parse(File.read(path))
       assert_equal 2, data.size
-      assert_equal({ "timestamp" => "00:01:23", "seconds" => 83.0, "label" => "important" }, data[0])
-      assert_equal({ "timestamp" => "00:03:45", "seconds" => 225.5, "label" => nil }, data[1])
+      assert_equal({"timestamp" => "00:01:23", "seconds" => 83.0, "label" => "important"}, data[0])
+      assert_equal({"timestamp" => "00:03:45", "seconds" => 225.5, "label" => nil}, data[1])
     end
   end
 

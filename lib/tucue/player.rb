@@ -124,7 +124,7 @@ module Tucue
 
     def get_property(name)
       response = send_command(["get_property", name])
-      response["error"] == "success" ? response["data"] : nil
+      (response["error"] == "success") ? response["data"] : nil
     end
 
     def set_property(name, value)

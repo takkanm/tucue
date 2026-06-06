@@ -16,7 +16,7 @@ module Tucue
       end
 
       def to_h
-        { timestamp: timestamp, seconds: time.to_f.round(3), label: label }
+        {timestamp: timestamp, seconds: time.to_f.round(3), label: label}
       end
     end
 

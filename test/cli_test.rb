@@ -29,7 +29,7 @@ class CLITest < Minitest::Test
   end
 
   def test_start_without_file_returns_error
-    out, = capture_io { @status = Tucue::CLI.start([]) }
+    _, = capture_io { @status = Tucue::CLI.start([]) }
     assert_equal 1, @status
   end
 
